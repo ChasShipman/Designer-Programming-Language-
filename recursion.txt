@@ -1,0 +1,32 @@
+DEFINE fact(n) {
+    define return;
+    if: n = 1 {
+        return >> 1;
+    } 
+    else: {
+        return >> n * fact(n - 1);
+    }
+    return;
+}
+
+print("fact(1) = ", fact(1), "\n");
+print("fact(5) = ", fact(5), "\n");
+
+DEFINE fib(n) {
+    define return;
+    if: n = 0 {
+        return >> 0;
+    } 
+    else: if: n = 1 {
+        return >> 1;
+    } 
+    else: {
+        define n1 >> fib(n-1);
+        define n2 >> fib(n-2);
+        return >> n1 + n2;
+    }
+    return;
+}
+print("fib(0) is ", fib(0), "\n");
+print("fib(1) is ", fib(1), "\n");
+print("fib(10) is ", fib(10), "\n");

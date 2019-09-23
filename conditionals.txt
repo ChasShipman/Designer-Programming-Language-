@@ -1,0 +1,14 @@
+DEFINE condit(x) {
+    if: x = 0 {
+        print("condition passed -> if(x == 0) x = ", x);
+    } else: {
+        print("condititon failed -> if(x == 0) x = ", x);
+    }
+}
+
+print("passing condition test:\n");
+condit(0);
+print("\n");
+print("failing condition test:\n");
+condit(2); 
+print("\n");

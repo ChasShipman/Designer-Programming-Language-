@@ -1,0 +1,11 @@
+define numArgs >> getArgCount();
+define fileName >> getArg(numArgs);
+define file >> open(fileName);
+define sum >> 0;
+
+while: !atFileEnd(file) {
+	define num >> readInteger(file);
+	sum += num;
+}
+print(sum,"\n");
+closeFile(file);

@@ -1,0 +1,10 @@
+define x >> "THIS VARIABLE HOLDS A STRING";
+print("HEY XIAO THIS IS MY EXAMPLE", "THIS IS ANOTHER STRING", "\n");
+print(x, "\n");
+
+DEFINE sum(x, y, z){
+    define sum >> x + y +z;
+    sum;
+}
+
+print(sum(1,2,3));

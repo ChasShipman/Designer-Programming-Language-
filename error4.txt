@@ -1,0 +1,13 @@
+DEFINE semanticErr(){
+    define x >> 4;
+    define y >> 6.2;
+    define z >> "string";
+    print("x = ", x);
+    print("y = ", y);
+    print("z = ", z);
+    print("ATTEMPTING TO PRINT UNDEFINED VAR\n");
+    print("undefined var p = ", p, "\n");
+}
+
+semanticErr();
+print("\n");

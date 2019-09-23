@@ -1,0 +1,100 @@
+program	: definition
+	| statement
+	| definition program
+	| statement program
+
+definition	: varDef
+		| funcDef
+		| classDef
+
+unary	: variableExpr
+	| INTEGER
+	| REAL
+	| CHAR
+	| STRING
+	| uoperator unary
+	| OPEN_PAREN expression CLOSE_PAREN
+
+variableExpr	: ID
+		| ID OPEN_PAREN optExpressionList CLOSE_PAREN
+
+
+uoperator	: PLUS PLUS
+		| MINUS MINUS
+		| UMINUS
+
+expression	: unary
+		| unary uoperator
+		| unary operator expression
+
+optExpression	: expression
+		| *empty*
+
+optExpressionList	: expressionList
+			| *empty*
+
+expressionList	: expression
+		| expression COMMA expressionList
+			
+operator	: PLUS
+		| MINUS
+		| DIVISION
+		| TIMES
+		| MODULUS
+		| EXPONENT
+		| DOT
+		| EQUAL_TO
+		| NOT_EQUAL_TO
+		| GREATER_THAN
+		| GREATER_THAN_OR_EQUAL_TO
+		| LESS_THAN
+		| LESS_THAN_OR_EQUAL_TO
+		| AND
+		| OR
+		| NOT
+		| EQUALS
+		| PLUS_EQUALS
+		| MINUS_EQUALS
+		| TIMES_EQUALS
+		| DIVISON_EQUALS
+		| REMAINEDER_EQUALS
+		| EXPONENTIATION_EQUALS
+
+varDef	: VAR ID optInit SEMICOLON
+
+optInit	: ASSIGN expression
+	| *empty*
+
+funcDef	: FUNCTION ID OPEN_PAREN optParameterList CLOSE_PAREN block
+
+optParameterList	: parameterList
+			| *empty*
+
+parameterList	: ID
+		| ID COMMA parameterList
+
+block	: OPEN_BRACE statementList CLOSE_BRACE
+
+statementList	: statement
+		| statement statementList
+
+statement	: expression SEMICOLON
+		| ifStatement
+		| whileLoop
+		| forLoop
+		| returnStatement
+		| definition
+
+ifStatement	: IF OPEN_PAREN	expression CLOSE_PAREN block optElse
+
+optElse	:	ELSE ifStatement
+	| ELSE block
+	| *empty*
+
+whileLoop 	: WHILE OPEN_PAREN expression CLOSE_PAREN block
+
+forLoop		: FOR OPEN_PAREN optExpression SEMICOLON optExpression SEMICOLON optExpression CLOSE_PAREN block
+
+classDef	: CLASS ID block
+
+returnStatement	: RETURN optExpression SEMICOLON

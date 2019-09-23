@@ -1,0 +1,28 @@
+print("Passing a DEFINE to a DEFINE\n");
+DEFINE fooLambda(lamb) {
+    lamb (10);
+}
+print("fooLambda(grape(x)) = ", fooLambda(grape(x) { x + 7;}), "\n");
+
+print("nested DEFINE test\n");
+DEFINE big(z) {
+    define y >> 4;
+    DEFINE little(y) {
+        z + y;
+    }
+    little(y);
+}
+define x >> big(21);
+print("x = ", x, "\n");
+
+DEFINE f(x)
+    {
+    grape (y) { x + y; };
+    }
+
+define a >> f(3);
+define b >> f(11);
+
+print("a(5) is ",a(5),"\n");      # should be 8
+print("b(6) is ",b(6),"\n");      # should be 17
+print("a(10) is ",a(10),"\n");    # should be 13

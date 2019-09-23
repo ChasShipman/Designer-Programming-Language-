@@ -1,0 +1,15 @@
+DEFINE semanticErr(){
+    define x >> newArray(3);
+    setArray(x, 0, 1);
+    setArray(x, 1, 2);
+    setArray(x, 2, 3);
+
+    print("x[0] = ", getArray(x,0), "\n");
+    print("x[1] = ", getArray(x,1), "\n");
+    print("x[2] = ", getArray(x,2), "\n");
+    print("GOING TO PERFORM BAD ARRAY ACCESS\n");
+    print("bad array access x[3]= ", getArray(x,3), "\n");
+}
+
+semanticErr();
+print("\n");

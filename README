@@ -1,0 +1,71 @@
+------------------------------------------------------
+CREATED BY: Chas Shipman  ON: 1/26/19
+------------------------------------------------------
+
+README FOR DPL FINAL: DPL
+
+'$' represents users CLI in correct directory
+Compile using make:
+	 $make clean
+     $make
+     
+Run separate test cases using make:
+    $make error1
+    $make error1x
+    $make error2
+    $make error2x
+    $make error3
+    $make error3x
+    $make error4
+    $make error4x
+    $make error5
+    $make error5x
+    $make arrays
+    $make arraysx
+    $make conditionals
+    $make conditionalsx
+    $make recursion
+    $make recursionx
+    $make iteration
+    $make iterationx
+    $make functions
+    $make functionsx      # shows you can pass functions and return nested functions
+    $make lambda      
+    $make lambdax      
+    $make objects      
+    $make objectsx        # get and update field, method call (e.g. setter)  
+    make problem
+    make problemx
+    
+Using the bash script where '#!' represents the different test file names of the make test
+    $run #!
+    ex usage: $run error1.txt
+    ex usage: $run error2.txt
+    
+To run IAVL commands: IAVL reads int a series of intergers and sums them together.
+    ex usage: $run IAVL commands
+    
+    
+    
+DPL usage
+
+definitions:
+CLASS: defines a class
+DEFINE: defines a function
+define: defines a variable
+grape: defines a lambda
+
+Blocks:
+all blocks start with '{' and end with '}'
+
+calls:
+function call start with the function ID followed by '(' ending in ')'
+lambdas have no id but follow same function call format.
+
+statements:
+print: usage -> print() can print multple things separated by a ','
+if: usage -> if: condition {statements}
+else: usage -> else: <optif> {statemtents}
+while: usage -> while: conditions {statements}
+
+

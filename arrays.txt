@@ -1,0 +1,15 @@
+DEFINE arrTest(){
+    print("---allocating new array x---\n");
+    define x >> newArray(3);
+    print("---\nsetting array vals:\nx[0] = 1\nx[1] = 2.22\nx[2] = this index holds a string\n---\n");
+    setArray(x, 0, 1);
+    setArray(x, 1, 2.22);
+    setArray(x, 2, "this index holds a string");
+
+    print("x[0] = ", getArray(x,0), "\n");
+    print("x[1] = ", getArray(x,1), "\n");
+    print("x[2] = ", getArray(x,2), "\n");
+}
+
+arrTest();
+print("\n");

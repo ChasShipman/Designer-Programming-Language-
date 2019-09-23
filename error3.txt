@@ -1,0 +1,7 @@
+DEFINE synerr(){
+    define x >> 4
+    print("x = ", x);
+}
+
+synerr();
+print("\n");

@@ -1,0 +1,21 @@
+#:DEFINE f(x)
+    {
+    grape (y) { x + y; };
+    }
+
+define a >> f(3);
+define b >> f(11);
+
+print("a(5) is ",a(5),"\n");      # should be 8
+print("b(6) is ",b(6),"\n");      # should be 17
+print("a(10) is ",a(10),"\n");    # should be 13
+:#
+
+DEFINE createLine(slope, intercept){
+		grape (x){
+			((slope * x) + intercept);
+		};
+}
+
+define a >> createLine(12, 32);
+print(a(3.5), "\n");

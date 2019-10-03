@@ -1,0 +1,71 @@
+CLASS exampleClass {
+    define x >> 0;
+    define y >> 0;
+
+    DEFINE setX(i){
+        x >> i;
+    }
+
+    DEFINE setY(i){
+        y >> i;
+    }
+
+    DEFINE getX(){
+        define xx >> x;
+        xx;
+    }
+
+    DEFINE getY(){
+        define yy >> y;
+        yy;
+    }
+
+	define next;
+
+};
+
+DEFINE testClass(){
+
+    #first set of test just normal get and set on x and y. prints results
+    define example >> exampleClass(); #make my first box 
+    example.setX(2.4);
+    example.setY(5);
+    define ten >> example.getX();
+    define five >> example.getY();
+    print("ten >> ", ten, "\n");
+    print("five >> ", five, "\n");
+
+    #testing I can do mutliple evalassign, and print result
+	define a; define b;  #define c;
+	define c >> 25;
+	a >> b >> c;
+	example.setX(15);
+	print(a, " ", b,  " ", c , " " ,example.x, "\n"); # should print 25 25 25 15
+
+
+    #testing object inside object, setting x,  printing result
+	example.next >> exampleClass();
+	example.next.setX(69);
+	print(example.next.x, "\n");
+	
+    #testing object inside object inside object, setting x, printing result
+	example.next.next >> exampleClass();
+	example.next.next.setX(70);
+	print(example.next.next.x, "\n");
+
+    #testing mutiple evalassing on object inside object inside object, printing result
+	example.setX(40);
+	define j; define k; define l;
+	j >> example.next.next.getX();
+	k >> example.next.getX();
+	l >> example.getX();
+
+    #example.next.next.setX(example.getX());
+	
+	print(j, " ", k, " ", l, "\n"); #should print 70 69 40
+	j >> k >> l;
+	print(j, " ", k, " ", l, "\n"); #should print 40 40 40
+    print(example.next.next.getX(), " ", example.next.getX(), " ", example.getX(), "\n"); #should print 70 68 40
+}
+
+testClass();

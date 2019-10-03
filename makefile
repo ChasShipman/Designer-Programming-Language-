@@ -33,82 +33,82 @@ clean :
 	rm -f eval
 
 error1 : all
-	@cat error1.txt
+	@cat tests/error1.txt
 
 error1x : all
-	@run error1.txt
+	@run tests/error1.txt
 
 error2 : all
-	@cat error2.txt
+	@cat tests/error2.txt
 
 error2x : all
-	@run error2.txt
+	@run tests/error2.txt
 
 error3 : all
-	@cat error3.txt
+	@cat tests/error3.txt
 
 error3x : all
-	@run error3.txt
+	@run tests/error3.txt
 
 error4 : all
-	@cat error4.txt
+	@cat tests/error4.txt
 
 error4x : all
-	@run error4.txt
+	@run tests/error4.txt
 
 error5 : all
-	@cat error5.txt
+	@cat tests/error5.txt
 
 error5x : all
-	@run error5.txt
+	@run tests/error5.txt
 
 arrays : all
-	@cat arrays.txt
+	@cat tests/arrays.txt
 
 arraysx : all
-	@run arrays.txt
+	@run tests/arrays.txt
 
 conditionals : all
-	@cat conditionals.txt
+	@cat tests/conditionals.txt
 
 conditionalsx : all
-	@run conditionals.txt
+	@run tests/conditionals.txt
 
 recursion : all
-	@cat recursion.txt
+	@cat tests/recursion.txt
 
 recursionx : all
-	@run recursion.txt
+	@run tests/recursion.txt
 
 iteration : all
-	@cat iteration.txt
+	@cat tests/iteration.txt
 
 iterationx : all
-	@run iteration.txt
+	@run tests/iteration.txt
 
 functions : all
-	@cat functions.txt
+	@cat tests/functions.txt
 
 functionsx : all
-	@run functions.txt
+	@run tests/functions.txt
 
 lambda : all
-	@cat lambda.txt
+	@cat tests/lambda.txt
 
 lambdax : all
-	@run lambda.txt
+	@run tests/lambda.txt
 
 objects : all
-	@cat objects.txt
+	@cat tests/objects.txt
 
 objectsx : all
-	@run objects.txt
+	@run tests/objects.txt
 
 problem : all
-	@cat iAvl
+	@cat tests/IAVL
 
 problemx : all
-	@run iAvl commands
+	@run tests/IAVL commands
 
 
 run : all

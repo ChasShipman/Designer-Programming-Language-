@@ -3,9 +3,12 @@ define fileName >> getArg(numArgs);
 define file >> open(fileName);
 define sum >> 0;
 
+print("Opening file: ", "\n");
 while: !atFileEnd(file) {
 	define num >> readInteger(file);
+	print("Reading in integer: ", num, "\n");
 	sum += num;
 }
+print("Printing sum of integers: ");
 print(sum,"\n");
 closeFile(file);
